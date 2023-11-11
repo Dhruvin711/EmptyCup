@@ -5,149 +5,79 @@
 <link rel="stylesheet" href="static/css/home.css">
 
 <div class="container">
-    <div class="card active-card">
-        <div class="card-details">
-            <div class="content-1">
-                <p class="heading">Epic Designs</p>
-            </div>
 
-            <div class="content-2 ratings">
-                <img src="/static/images/card/full-star.svg" alt="full-star">
-                <img src="/static/images/card/full-star.svg" alt="full-star">
-                <img src="/static/images/card/full-star.svg" alt="full-star">
-                <img src="/static/images/card/half-star.svg" alt="half-star">
-                <img src="/static/images/card/empty-star.svg" alt="empty-star">
-            </div>
-
-            <div class="content-3">
-                <p class="description">Passionate team of 4 designers working out of Bangalore with an experience of 4 years.</p>
-            </div>
-
-            <div class="content-4">
-                <div class="project">
-                    <p class="number">57</p>
-                    <p class="name">Project</p>
+    {% for card in data %}
+        <div class="card">
+            <div class="card-details">
+                <div class="content-1">
+                    <p class="heading">{{card.name}}</p>
                 </div>
-    
-                <div class="years">
-                    <p class="number">8</p>
-                    <p class="name">Years</p>
+
+                <div class="content-2 rating">
+                    {% for star in card.rating_list %}
+                        <img src="/static/images/card/{{star}}.svg" alt="{{star}}">
+                    {% endfor %}
                 </div>
-    
-                <div class="price">
-                    <p class="number">$$</p>
-                    <p class="name">Price</p>
+
+                <div class="content-3">
+                    <p class="description">{{card.description}}</p>
+                </div>
+
+                <div class="content-4">
+                    <div class="projects">
+                        <p class="value">{{card.projects}}</p>
+                        <p class="name">Project</p>
+                    </div>
+        
+                    <div class="experience">
+                        <p class="value">{{card.experience}}</p>
+                        <p class="name">Years</p>
+                    </div>
+        
+                    <div class="price">
+                        <p class="value">{{card.price}}</p>
+                        <p class="name">Price</p>
+                    </div>
+                </div>
+
+                <div class="content-5">
+                    <p class="number-1">{{card.contacts.0}}</p>
+                    <p class="number-2">{{card.contacts.1}}</p>
                 </div>
             </div>
 
-            <div class="content-5">
-                <p class="number-1">+91 - 984532853</p>
-                <p class="number-2">+91 - 984532854</p>
+            <div class="btns">
+                <div class="details">
+                    <a href="#">
+                        <img src="/static/images/card/details.svg" alt="details">
+                        <p>Details</p>  
+                    </a>
+                </div>
+
+                <div class="hide">
+                    <a href="#">
+                        <img src="/static/images/card/hide-{{card.hide}}.svg" alt="hide">
+                        <p>Hide</p>  
+                    </a>
+                </div>
+
+                <div class="shortlist">
+                    <a href="#">
+                        <img src="/static/images/card/shortlist-{{card.shortlist}}.svg" alt="shortlist">
+                        <p>Shortlist</p>  
+                    </a>
+                </div>
+
+                <div class="report">
+                    <a href="#">
+                        <img src="/static/images/card/report.svg" alt="report">
+                        <p>Report</p>  
+                    </a>
+                </div>
             </div>
         </div>
-
-        <div class="btns">
-            <div class="details">
-                <a href="#">
-                    <img src="/static/images/card/details.svg" alt="details">
-                    <p>Details</p>  
-                </a>
-            </div>
-
-            <div class="hide">
-                <a href="#">
-                    <img src="/static/images/card/hide.svg" alt="hide">
-                    <p>Hide</p>  
-                </a>
-            </div>
-
-            <div class="shortlist">
-                <a href="#">
-                    <img src="/static/images/card/shortlist-1.svg" alt="shortlist">
-                    <p>Shortlist</p>  
-                </a>
-            </div>
-
-            <div class="report">
-                <a href="#">
-                    <img src="/static/images/card/report.svg" alt="report">
-                    <p>Report</p>  
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-details">
-            <div class="content-1">
-                <p class="heading">Studio - D3</p>
-            </div>
-
-            <div class="content-2 ratings">
-                <img src="/static/images/card/full-star.svg" alt="full-star">
-                <img src="/static/images/card/full-star.svg" alt="full-star">
-                <img src="/static/images/card/full-star.svg" alt="full-star">
-                <img src="/static/images/card/full-star.svg" alt="full-star">
-                <img src="/static/images/card/half-star.svg" alt="half-star">
-            </div>
-
-            <div class="content-3">
-                <p class="description">Passionate team of 4 designers working out of Bangalore with an experience of 4 years.</p>
-            </div>
-
-            <div class="content-4">
-                <div class="project">
-                    <p class="number">43</p>
-                    <p class="name">Project</p>
-                </div>
+    {% endfor %}
     
-                <div class="years">
-                    <p class="number">6</p>
-                    <p class="name">Years</p>
-                </div>
-    
-                <div class="price">
-                    <p class="number">$$$</p>
-                    <p class="name">Price</p>
-                </div>
-            </div>
-
-            <div class="content-5">
-                <p class="number-1">+91 - 984532853</p>
-                <p class="number-2">+91 - 984532854</p>
-            </div>
-        </div>
-
-        <div class="btns">
-            <div class="details">
-                <a href="#">
-                    <img src="/static/images/card/details.svg" alt="details">
-                    <p>Details</p>  
-                </a>
-            </div>
-
-            <div class="hide">
-                <a href="#">
-                    <img src="/static/images/card/hide.svg" alt="hide">
-                    <p>Hide</p>  
-                </a>
-            </div>
-
-            <div class="shortlist">
-                <a href="#">
-                    <img src="/static/images/card/shortlist.svg" alt="shortlist">
-                    <p>Shortlist</p>  
-                </a>
-            </div>
-
-            <div class="report">
-                <a href="#">
-                    <img src="/static/images/card/report.svg" alt="report">
-                    <p>Report</p>  
-                </a>
-            </div>
-        </div>
-    </div>
 </div>
 
 {% endblock content %}

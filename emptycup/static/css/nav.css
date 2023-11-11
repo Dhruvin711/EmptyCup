@@ -41,3 +41,7 @@
     display: flex;
     gap: 30px;
 }
+
+.map-icon {
+    margin-left: 5px;
+}
