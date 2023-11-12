@@ -7,7 +7,7 @@
 <div class="container">
 
     {% for card in data %}
-        <div class="card">
+        <div class="card" id="card-{{forloop.counter0}}">
             <div class="card-details">
                 <div class="content-1">
                     <p class="heading">{{card.name}}</p>
@@ -63,7 +63,7 @@
 
                 <div class="shortlist">
                     <a href="#">
-                        <img src="/static/images/card/shortlist-{{card.shortlist}}.svg" alt="shortlist">
+                        <img id="shortlist-icon-{{forloop.counter0}}" class="shortlist-{{card.shortlist}}" src="/static/images/card/shortlist-{{card.shortlist}}.svg" alt="shortlist">
                         <p>Shortlist</p>  
                     </a>
                 </div>
@@ -79,5 +79,11 @@
     {% endfor %}
     
 </div>
+
+<script>
+    var data = {{data | safe}};
+</script>
+
+<script src="/static/javascript/index.js"></script>
 
 {% endblock content %}

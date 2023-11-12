@@ -5,7 +5,7 @@
 .card {
     display: flex;
     justify-content: space-between;
-    padding: 21px 25px 33px 33px;
+    padding: 30px 25px 33px 33px;
     border-top: 0.25px solid #D7D7D7;
 }
 
