@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function toggleShortlistFilter() {
         if(shortlistNavBtn.classList.contains('active')){
-            shortlistNavBtn.firstChild.src = "/static/images/navbar/shortlisted-0.svg";
+            shortlistNavBtn.src = "/static/images/navbar/shortlisted-0.svg";
         }
         else{
-            shortlistNavBtn.firstChild.src = "/static/images/navbar/shortlisted-1.svg";
+            shortlistNavBtn.src = "/static/images/navbar/shortlisted-1.svg";
         }
 
         shortlistNavBtn.classList.toggle('active');

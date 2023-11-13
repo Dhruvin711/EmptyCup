@@ -41,6 +41,18 @@ def HomePage(request):
             'hide':0,
             'shortlist':0,
         },
+        {
+            'name' : 'Epic Designs',
+            'rating': 3.5,
+            'rating_list':[0,0,0,0,0],
+            'description': 'Passionate team of 4 designers working out of Bangalore with an experience of 4 years.',
+            'projects': 57,
+            'experience': 8,
+            'price': '$$',
+            'contacts': ['+91 - 984532853', '+91 - 984532854'],
+            'hide':0,
+            'shortlist':0,
+        },
     ]
 
     for card in data:
