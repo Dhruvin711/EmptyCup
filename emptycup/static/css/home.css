@@ -1,5 +1,6 @@
 .container {
-    border-top: 0.25px solid #D7D7D7;
+    margin: 0;
+    padding: 0;
 }
 
 .card {
@@ -112,4 +113,11 @@
     line-height: 10px;
     letter-spacing: 0em;
     color: #8D4337;
+}
+
+#shortlisted-message {
+    display: none; 
+    text-align: center;
+    padding: 100px 25px;
+    border-top: 0.25px solid #D7D7D7;
 }

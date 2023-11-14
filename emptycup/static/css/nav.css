@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 20px;
-    border: 0.25px solid #D0D0D0
+    border: 0.25px solid #D0D0D0;
 }
 
 .company-name {
@@ -35,6 +35,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 0.25px solid #D0D0D0;
 }
 
 .content-1, .content-2 {

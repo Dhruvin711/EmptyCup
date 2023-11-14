@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Shortlist toggle functionality
     shortlistBtns.forEach((button, index) => {
-        button.addEventListener('click', () => toggleShortlist(index));
+        button.addEventListener('click', () => {
+            toggleShortlist(index);
+            shortlistMessage();
+        });
     });
 
     function toggleShortlist(index) {
@@ -33,7 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Shortlisted filter toggle functionality
     const shortlistNavBtn = document.querySelector('.shortlist-nav-icon');
 
-    shortlistNavBtn.addEventListener('click', toggleShortlistFilter);
+    shortlistNavBtn.addEventListener('click', () => {
+        toggleShortlistFilter();
+        shortlistMessage();
+    });
 
     function toggleShortlistFilter() {
         if(shortlistNavBtn.classList.contains('active')){
@@ -60,5 +66,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 cardElement.style.display = "flex";
             }
         });
+    }
+
+    // Check if there are any designers that are shortlisted or not
+    function shortlistMessage() {
+        const shortlistedCards = data.filter(card => card.shortlist === 1);
+        
+        if (shortlistNavBtn.classList.contains('active') && shortlistedCards.length === 0) {
+            // If the filter is active and there are no shortlisted cards, show a message
+            document.getElementById('shortlisted-message').style.display = 'block';
+        } 
+        else {
+            // Otherwise, hide the message
+            document.getElementById('shortlisted-message').style.display = 'none';
+        }
     }
 });
