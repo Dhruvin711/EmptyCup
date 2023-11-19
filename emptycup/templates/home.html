@@ -4,89 +4,12 @@
 
 <link rel="stylesheet" href="static/css/home.css">
 
-<div class="container">
-
-    {% for card in data %}
-        <div class="card" id="card-{{forloop.counter0}}">
-            <div class="card-details">
-                <div class="content-1">
-                    <p class="heading">{{card.name}}</p>
-                </div>
-
-                <div class="content-2 rating">
-                    {% for star in card.rating_list %}
-                        <img src="/static/images/card/{{star}}.svg" alt="{{star}}">
-                    {% endfor %}
-                </div>
-
-                <div class="content-3">
-                    <p class="description">{{card.description}}</p>
-                </div>
-
-                <div class="content-4">
-                    <div class="projects">
-                        <p class="value">{{card.projects}}</p>
-                        <p class="name">Project</p>
-                    </div>
-        
-                    <div class="experience">
-                        <p class="value">{{card.experience}}</p>
-                        <p class="name">Years</p>
-                    </div>
-        
-                    <div class="price">
-                        <p class="value">{{card.price}}</p>
-                        <p class="name">Price</p>
-                    </div>
-                </div>
-
-                <div class="content-5">
-                    <p class="number-1">{{card.contacts.0}}</p>
-                    <p class="number-2">{{card.contacts.1}}</p>
-                </div>
-            </div>
-
-            <div class="btns">
-                <div class="details">
-                    <a href="#">
-                        <img src="/static/images/card/details.svg" alt="details">
-                        <p>Details</p>  
-                    </a>
-                </div>
-
-                <div class="hide">
-                    <a href="#">
-                        <img src="/static/images/card/hide-{{card.hide}}.svg" alt="hide">
-                        <p>Hide</p>  
-                    </a>
-                </div>
-
-                <div class="shortlist">
-                    <a style="cursor: pointer;">
-                        <img id="shortlist-icon-{{forloop.counter0}}" class="shortlist-{{card.shortlist}}" src="/static/images/card/shortlist-{{card.shortlist}}.svg" alt="shortlist">
-                        <p>Shortlist</p>  
-                    </a>
-                </div>
-
-                <div class="report">
-                    <a href="#">
-                        <img src="/static/images/card/report.svg" alt="report">
-                        <p>Report</p>  
-                    </a>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-    
+<div class="container" id="card-container">
 </div>
 
 <div id="shortlisted-message">
     <p>Shortlisted Designers will appear here!</p>
 </div>
-
-<script>
-    var data = {{data | safe}};
-</script>
 
 <script src="/static/javascript/index.js"></script>
 
