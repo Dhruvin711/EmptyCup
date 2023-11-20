@@ -4,7 +4,7 @@ from django.db import models
 class Designers(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(null=False)
-    rating = models.DecimalField(max_digits=2, decimal_places=1)
+    rating = models.CharField(max_length=3)
 
     projects = models.IntegerField()
     experience = models.IntegerField()

@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
-    'https://emptycup-wkne.onrender.com/',
+    'https://emptycup-wkne.onrender.com',
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homePage',
     'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #cors headers middlewares
+
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'emptycup.urls'
@@ -81,13 +87,25 @@ WSGI_APPLICATION = 'emptycup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+#for mongoDB
+DATABASES = {
+       'default': {
+           'ENGINE': 'djongo',
+           'NAME': 'EmptyCup',
+           "CLIENT" : {
+                'host' : 'mongodb+srv://Dhruvin:Dhruvin123@cluster0.mx0mm1c.mongodb.net/Test1',
+                'username':'Dhruvin',
+                'password':'Dhruvin123',
+           }
+       }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
